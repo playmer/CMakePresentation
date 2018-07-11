@@ -116,3 +116,4 @@ CMakePresentation
 
 (10)Advanced 5: Precompiled, sigh
 
+(11)BonusTopic: PrototypeOfZeroPlatfromCMakeFiles
