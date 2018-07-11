@@ -20,7 +20,6 @@ CMakePresentation
     
 (4) Write a function
     have it recurse over each file on a target and print the file, as a debug function
-    Could also add a flag or something, who knows, we are lose cannon cops on the run
 
 (5) Add a command
     # copy the error dialog

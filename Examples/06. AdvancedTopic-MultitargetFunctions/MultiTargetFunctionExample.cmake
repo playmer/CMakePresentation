@@ -15,6 +15,12 @@ function(multitarget_output_directory_properties)
     # e.g. "debug extrafolder/IamAString/debug/${target}"
     set(multiValueArgs SPECIFIC_CONFIG_DIRECTORIES)
 
+    # first option, is appended to every parsed argument
+    # next string, is special options ,I always leave it blank
+    # nxt string is the one value arguements
+    # then the multivalue arguments
+    # then ${ARGN}, number of args always defined in a function
+    # always in this order
     cmake_parse_arguments(PARSED "" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     set(PARSED_TARGETS ${PARSED_UNPARSED_ARGUMENTS})
@@ -44,7 +50,6 @@ function(multitarget_output_directory_properties)
                 RUNTIME_OUTPUT_DIRECTORY_${config} 
                     ${PARSED_RUNTIME_DIRECTORY}/${restOfPath}
         )
-
         endforeach()
     endforeach()
 endfunction()

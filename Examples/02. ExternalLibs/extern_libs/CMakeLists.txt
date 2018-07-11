@@ -1,6 +1,3 @@
-
-#HEY CHANGE ALL OF THIS TO GLFW
-
 # create a static library target, that is imported, meaning it is imported from
 # a location, not build from source.
 add_library(glfwStatic STATIC IMPORTED GLOBAL) 
