@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.9.1 FATAL_ERROR)
 # FORTRAN is fortran
 # If this command isn't found in the top level CMakeLists.txt, CMake will add
 # one with C and CXX enabled. The include command will not work for this.
-project(MyFirstFunction CXX)
+project(AddACommand CXX)
 
 # If you have any global variables your whole project is going to need,
 # set them before you add sub directories
