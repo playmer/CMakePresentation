@@ -37,3 +37,18 @@ target_link_libraries(myLib
     PRIVATE 
     glfwStatic
 )
+
+# Conditionals in CMake! They don't add a scope, so be wary. This is also a
+# newer way of checking if we're compiling with MSVC, you might also see 
+# something like: if (${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC) which also 
+# works.
+if (MSVC)
+    # We want to set some MSVC specific flags, so we're just setting
+    # permissive- so the compiler is as standards compliant as it can be
+    # and std:c++17 so we get all the fancy new fully standardized features
+    # they have availible for us.
+    target_compile_options(myLib PRIVATE 
+        PUBLIC
+            -permissive- -std:c++17
+    )
+endif()

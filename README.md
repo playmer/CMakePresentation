@@ -11,8 +11,10 @@ CMakePresentation
     - show how to import a library
     - show that target includes work on an imported library
     - show that the library actually works correctly
+    - show setting target properties (include folders for glfw)
 
 (3) Cleanup Stuff
+    - show setting directory properties (VS_STARTUP_PROJECT)
     - show setting target properties (output folders)
     - compiler options
     
