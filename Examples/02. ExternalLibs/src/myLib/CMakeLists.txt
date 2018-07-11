@@ -29,8 +29,8 @@ target_sources(myLib
         myLib.cpp
 )
 
-# we defined ZLibStatic as a global 
+# we defined glfwStatic as a global 
 target_link_libraries(myLib
     PRIVATE 
-    ZLibStatic
+    glfwStatic
 )

@@ -5,6 +5,7 @@ CMakePresentation
     - demo targets
     - demo adding source
     - demo adding sub directory
+    - show doing out of source builds
 
 (2) External Libs
     - show how to import a library
@@ -12,7 +13,6 @@ CMakePresentation
     - show that the library actually works correctly
 
 (3) Cleanup Stuff
-    - show doing out of source builds
     - show setting target properties (output folders)
     - compiler options
     
