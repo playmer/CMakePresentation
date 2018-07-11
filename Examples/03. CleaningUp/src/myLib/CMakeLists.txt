@@ -29,6 +29,20 @@ target_sources(myLib
         myLib.cpp
 )
 
+# We get the list of sources by getting the sources property on myLib, then we
+# are going to call source group, passing it that list of sources. The reason
+# for this, is source_group is going to allow us to tell CMake what we want
+# our filters to look like in visual studio, well kind of anyway. It is a 
+# very frusterating function to get specific output from other then what it
+# wants to do by default. For instance, we pass a space to PREFIX because
+# that gets rid of the Header and Source filters. Sounds intuitive, right?
+get_target_property(targetSources myLib SOURCES)
+
+source_group(TREE ${CMAKE_CURRENT_LIST_DIR}
+PREFIX " " 
+FILES ${targetSources}
+) 
+
 # We defined glfwStatic as a global, so we can reference it here to link to it.
 # We also made sure to set the INTERFACE_INCLUDE_DIRECTORIES on the IMPORTED
 # target we made for it, so we don't need to do any messing around with
