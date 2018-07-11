@@ -17,6 +17,7 @@ target_sources(myExe PRIVATE main.cpp)
 
 set_target_properties(myExe
                       PROPERTIES
-                      ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/output/lib
-                      LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/output/lib
-                      RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/output/bin)
+                      ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output/lib
+                      LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output/lib
+                      RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output/bin
+)
