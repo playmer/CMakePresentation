@@ -113,3 +113,6 @@ CMakePresentation
 (8) Advanced 3: External Libs, No Source solution
 
 (9) Advanced 4: External Libs, Source solution
+
+(10)Advanced 5: Precompiled, sigh
+
