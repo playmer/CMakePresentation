@@ -1,0 +1,16 @@
+# add_executable will create a project that outputs an executable, we're using
+# a "" here because prior to 3.11 the add_executable command requires at least
+# an empty string to search for files. We could just add main.cpp here, but we
+# want to get in the habit of using target_sources.
+add_executable(myExe "")
+
+# We use target_sources to say libraries we want to add. The PRIVATE attribute
+# exists to state that all the following libraries should not be included in
+# any targets that depends on the myExe target through a call to
+# target_link_libraries.
+#
+# Note that we must begin the command by passing in the target to which we're
+# adding dependencies too.
+target_link_libraries(myExe PRIVATE myLib)
+
+target_sources(myExe PRIVATE main.cpp)
