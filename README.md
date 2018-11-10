@@ -22,15 +22,17 @@ CMakePresentation
     have it recurse over each file on a target and print the file, as a debug function
 
 (5) Add a command
-    # copy the error dialog
-    add_custom_command(TARGET ${aTarget} POST_BUILD
-        # executes "cmake -E copy_if_different
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different  
-        # input file
-        ${aZeroCoreDirectory}/Projects/Win32Shared/ErrorDialog.exe
-        #output file
-        ${aBuildOutputDirectory}/${aTarget}/ErrorDialog.exe
-    )
+```cmake
+# copy the error dialog
+add_custom_command(TARGET ${aTarget} POST_BUILD
+    # executes "cmake -E copy_if_different
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different  
+    # input file
+    ${aZeroCoreDirectory}/Projects/Win32Shared/ErrorDialog.exe
+    #output file
+    ${aBuildOutputDirectory}/${aTarget}/ErrorDialog.exe
+)
+```
 
 (6) Advanced 1: Multitarget functions, Variable functions
 ```cmake
