@@ -33,41 +33,41 @@ CMakePresentation
     )
 
 (6) Advanced 1: Multitarget functions, Variable functions
-    ```cmake
-    #### Sets the output directories for intermediate files
-    # as an exercise, make the start of function as a macro
-    function(zero_multitarget_output_directories)
-        set(oneValueArgs LIBRARY_DIRECTORY RUNTIME_DIRECTORY)
-        # empty since we leave targets as "unparsed" for consistancy
-        set(multiValueArgs )
+```cmake
+#### Sets the output directories for intermediate files
+# as an exercise, make the start of function as a macro
+function(zero_multitarget_output_directories)
+    set(oneValueArgs LIBRARY_DIRECTORY RUNTIME_DIRECTORY)
+    # empty since we leave targets as "unparsed" for consistancy
+    set(multiValueArgs )
 
-        cmake_parse_arguments(PARSED "" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+    cmake_parse_arguments(PARSED "" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-        set(PARSED_TARGETS ${PARSED_UNPARSED_ARGUMENTS})
+    set(PARSED_TARGETS ${PARSED_UNPARSED_ARGUMENTS})
 
-        foreach(target ${PARSED_TARGETS})
-            set_target_properties(
-                ${target}
-                PROPERTIES
-                    ARCHIVE_OUTPUT_DIRECTORY ${PARSED_LIBRARY_DIRECTORY}/${target}
-                    LIBRARY_OUTPUT_DIRECTORY ${PARSED_LIBRARY_DIRECTORY}/${target}
-                    RUNTIME_OUTPUT_DIRECTORY ${PARSED_RUNTIME_DIRECTORY}/${target}
-            )
-        endforeach()
-    endfunction()
-    ####
-    Fisher has a different solution to the problem this function solves, this is a good example
-    how there is no right way for how to do something, and depends very much on what
-    you prioritize in your project.
+    foreach(target ${PARSED_TARGETS})
+        set_target_properties(
+            ${target}
+            PROPERTIES
+                ARCHIVE_OUTPUT_DIRECTORY ${PARSED_LIBRARY_DIRECTORY}/${target}
+                LIBRARY_OUTPUT_DIRECTORY ${PARSED_LIBRARY_DIRECTORY}/${target}
+                RUNTIME_OUTPUT_DIRECTORY ${PARSED_RUNTIME_DIRECTORY}/${target}
+        )
+    endforeach()
+endfunction()
+####
+Fisher has a different solution to the problem this function solves, this is a good example
+how there is no right way for how to do something, and depends very much on what
+you prioritize in your project.
 
-    He takes one target and traverses their dependencies recursively to apply
-    flags.
+He takes one target and traverses their dependencies recursively to apply
+flags.
 
-    One could envision a combination of these solutions where we took a list of
-    targets and traversed their dependencies recursively to apply flags and
-    whatnot.
-    ####
-    ```
+One could envision a combination of these solutions where we took a list of
+targets and traversed their dependencies recursively to apply flags and
+whatnot.
+####
+```
     
 (7) Advanced 2: Source Group
 
