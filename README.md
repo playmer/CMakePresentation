@@ -33,6 +33,7 @@ CMakePresentation
     )
 
 (6) Advanced 1: Multitarget functions, Variable functions
+    ```cmake
     #### Sets the output directories for intermediate files
     # as an exercise, make the start of function as a macro
     function(zero_multitarget_output_directories)
@@ -66,6 +67,7 @@ CMakePresentation
     targets and traversed their dependencies recursively to apply flags and
     whatnot.
     ####
+    ```
     
 (7) Advanced 2: Source Group
 
